@@ -7,13 +7,13 @@
 
 Bienvenue dans le dépôt All-jellyfin-media-server ! Ce dépôt contient tout ce dont vous avez besoin pour créer votre propre serveur média Jellyfin avec Sonarr, Radarr, Jellyseerr, Prowlarr, Jackett, qBittorrent et Gluetun (VPN) dans une configuration Docker Compose. Nous désignerons l’ensemble de ces conteneurs sous le nom **Isyrr** pour simplifier.
 
-![](https://img.shields.io/github/stars/Morzomb/All-jellyfin-media-server.svg)
-![](https://img.shields.io/github/forks/Morzomb/All-jellyfin-media-server.svg)
-![](https://img.shields.io/github/release/Morzomb/All-jellyfin-media-server.svg) 
-![](https://img.shields.io/github/issues/Morzomb/All-jellyfin-media-server.svg)
-[![GitHub last commit](https://img.shields.io/github/last-commit/Morzomb/All-jellyfin-media-server.svg)](https://github.com/Morzomb/All-jellyfin-media-server/commits/master)
-![GitHub repo size](https://img.shields.io/github/repo-size/Morzomb/All-jellyfin-media-server)
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=Morzomb.All-jellyfin-media-server.id)
+![](https://img.shields.io/github/stars/anthonyCarigny/All-jellyfin-media-server.svg)
+![](https://img.shields.io/github/forks/anthonyCarigny/All-jellyfin-media-server.svg)
+![](https://img.shields.io/github/release/anthonyCarigny/All-jellyfin-media-server.svg) 
+![](https://img.shields.io/github/issues/anthonyCarigny/All-jellyfin-media-server.svg)
+[![GitHub last commit](https://img.shields.io/github/last-commit/anthonyCarigny/All-jellyfin-media-server.svg)](https://github.com/anthonyCarigny/All-jellyfin-media-server/commits/master)
+![GitHub repo size](https://img.shields.io/github/repo-size/anthonyCarigny/All-jellyfin-media-server)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=anthonyCarigny.All-jellyfin-media-server.id)
 
 > [!NOTE] 
 > **Access the repository in [English](README.md)**
@@ -599,7 +599,7 @@ De mon côté, cela m'affiche une adresse IP en Belgique :
 
  Installateur français :
  ```bash
- wget https://raw.githubusercontent.com/Morzomb/All-jellyfin-media-server/Main/setup-fr.sh -O setup-fr.sh
+ wget https://raw.githubusercontent.com/anthonyCarigny/All-jellyfin-media-server/Main/setup-fr.sh -O setup-fr.sh
  chmod +x setup-fr.sh
  ./setup-fr.sh
  ```
@@ -781,7 +781,7 @@ Ajoutez les informations du service dans le README principal :
 Alternativement, vous pouvez cloner et gérer le dépôt manuellement :
 
 ```bash
-git clone https://github.com/Morzomb/All-jellyfin-media-server.git
+git clone https://github.com/anthonyCarigny/All-jellyfin-media-server.git
 cd All-jellyfin-media-server/
 ```
 
