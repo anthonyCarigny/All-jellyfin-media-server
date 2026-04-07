@@ -32,7 +32,7 @@
 
     - Prowlarr:
         icon: sh-prowlarr
-        href: http://192.168.1.10:9696
+        href: http://{{HOMEPAGE_VAR_SERVER_IP}}:9696
         description: Managing indexers
         container: prowlarr
         widget:
