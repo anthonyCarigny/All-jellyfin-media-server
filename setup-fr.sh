@@ -6,7 +6,7 @@
 # ==============================================================================
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-REPO="https://raw.githubusercontent.com/Morzomb/All-jellyfin-media-server/Lab"
+REPO="https://raw.githubusercontent.com/AnthonyCarigny/All-jellyfin-media-server/Lab"
 REPO_BASE="$REPO/auto"
 COMPOSE_DL_DIR="$DIR/compose_downloads"
 ENV_FILE="$DIR/.env"
