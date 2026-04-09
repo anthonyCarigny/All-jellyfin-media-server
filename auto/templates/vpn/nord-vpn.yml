@@ -20,6 +20,9 @@ services:
       - SERVER_COUNTRIES=${SERVER_COUNTRIES}
       - VPN_TYPE=wireguard
       - SERVER_CATEGORIES=P2P
+      - FIREWALL_VPN_INPUT_PORTS=46931
+      - DNS_ADDRESS=1.1.1.1
+      - DOT=off
     restart: always
     volumes:
       - ${COMMON_PATH}:${COMMON_PATH}
