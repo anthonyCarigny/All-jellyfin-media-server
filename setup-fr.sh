@@ -431,7 +431,7 @@ if [ "$INSTALL_VPN" == "true" ] && [ "$FORCE_VPN_CONFIG" = true ]; then
         [yY]*)
             if [ "$VPN_PROVIDER" == "nord" ]; then
                 show_info "NordVPN - Credentials (Service Credentials, pas login)"
-                sed -i "s/^# WIREGUARD_PRIVATE_KEY=/WIREGUARD_PRIVATE_KEY=/g" .env
+                sed -i "s/^# PRIVATE_KEY=/PRIVATE_KEY=/g" .env
                 sed -i "s/^# SERVER_COUNTRIES=/SERVER_COUNTRIES=/g" .env
                 
                 read -p "Private Key: " v_priv
