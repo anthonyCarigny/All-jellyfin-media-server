@@ -15,4 +15,7 @@ services:
       - TZ=${TZ}
       - HOMEPAGE_VAR_SERVER_IP=${SERVER_IP}
       - HOMEPAGE_ALLOWED_HOSTS=${SERVER_IP}:3000,localhost:3000,${SERVER_IP}
+      - SONARR_KEY=${SONARR_KEY}
+      - QBIT_TEMP_PASS=${QBIT_TEMP_PASS}
+      - RADARR_KEY=${RADARR_KEY}
     restart: unless-stopped
