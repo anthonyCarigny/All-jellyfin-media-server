@@ -11,7 +11,7 @@
         widget:
           type: jellyfin
           url: http://jellyfin:8096 
-          key: API_Key_HERE
+          key: {{JELLYFIN_API_KEY}}
           enableBlocks: true
           enableNowPlaying: true
           enableUser: true
@@ -28,7 +28,7 @@
         widget:
           type: jellyseerr
           url: http://jellyseerr:5055
-          key: API_Key_HERE
+          key: {{JELLYSEER_API_KEY}}
 
     - Prowlarr:
         icon: sh-prowlarr
@@ -38,7 +38,7 @@
         widget:
           type: prowlarr
           url: http://prowlarr:9696
-          key: API_Key_HERE
+          key: {{PROWLARR_API_KEY}}
 
     - Jackett:
         icon: sh-jackett
@@ -47,7 +47,7 @@
         widget:
           type: jackett
           url: http://jackett:9117
-          key: API_Key_HERE
+          key: {{JACKETT_API_KEY}}
           
 - Management:
     - Radarr:
@@ -58,7 +58,7 @@
         widget:
           type: radarr
           url: http://radarr:7878
-          key: API_Key_HERE
+          key: {{RADARR_KEY}}
           enableQueue: true
 
     - Sonarr:
@@ -69,7 +69,7 @@
         widget:
           type: sonarr
           url: http://sonarr:8989
-          key: API_Key_HERE
+          key: {{SONARR_KEY}}
           enableQueue: true
 
     - qBittorrent:
@@ -80,6 +80,6 @@
           type: qbittorrent
           url: http://gluetun:8080
           username: admin
-          password: QBIT_TEMP_PASS
+          password: {{QBIT_TEMP_PASS}}
           enableLeechProgress: true
           enableLeechSize: true
