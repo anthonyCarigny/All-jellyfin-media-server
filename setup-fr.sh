@@ -434,10 +434,10 @@ if [ "$INSTALL_VPN" == "true" ] && [ "$FORCE_VPN_CONFIG" = true ]; then
                 sed -i "s/^# WIREGUARD_PRIVATE_KEY=/WIREGUARD_PRIVATE_KEY=/g" .env
                 sed -i "s/^# SERVER_COUNTRIES=/SERVER_COUNTRIES=/g" .env
                 
-                read -p "NordVPN private key: " v_pass
+                read -p "Private Key: " v_priv
                 read -p "Region (ex: Belgium, France, Germany): " v_reg
                 
-                sed -i "s|^WIREGUARD_PRIVATE_KEY=.*|WIREGUARD_PRIVATE_KEY=$v_pass|g" .env
+                sed -i "s|^PRIVATE_KEY=.*|PRIVATE_KEY=$v_priv|g" .env
                 sed -i "s|^SERVER_COUNTRIES=.*|SERVER_COUNTRIES=$v_reg|g" .env
             
             elif [ "$VPN_PROVIDER" == "proton" ]; then

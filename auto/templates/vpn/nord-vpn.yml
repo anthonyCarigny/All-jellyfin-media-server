@@ -16,8 +16,8 @@ services:
       - 36873:36873/udp
     environment:
       - VPN_SERVICE_PROVIDER=nordvpn
-      - WIREGUARD_PRIVATE_KEY=${WIREGUARD_PRIVATE_KEY}
-      - SERVER_COUNTRIES=${SERVER_REGIONS}
+      - WIREGUARD_PRIVATE_KEY=${PRIVATE_KEY}
+      - SERVER_COUNTRIES=${SERVER_COUNTRIES}
       - VPN_TYPE=wireguard
       - SERVER_CATEGORIES=P2P
     restart: always
