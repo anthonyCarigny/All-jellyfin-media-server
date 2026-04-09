@@ -417,7 +417,7 @@ if [ "$INSTALL_VPN" == "true" ] && [ "$FORCE_VPN_CONFIG" = true ]; then
                 show_info "NordVPN - Service Credentials (not login)"
                 sed -i "s/^# OPENVPN_USER=/OPENVPN_USER=/g" .env
                 sed -i "s/^# OPENVPN_PASSWORD=/OPENVPN_PASSWORD=/g" .env
-                sed -i "s/^# SERVER_REGIONS=/SERVER_REGIONS=/g" .env
+                sed -i "s/^# SERVER_COUNTRIES=/SERVER_COUNTRIES=/g" .env
                 
                 read -p "NordVPN User (Service Credential): " v_user
                 read -p "NordVPN Password: " v_pass
@@ -425,7 +425,7 @@ if [ "$INSTALL_VPN" == "true" ] && [ "$FORCE_VPN_CONFIG" = true ]; then
                 
                 sed -i "s|^OPENVPN_USER=.*|OPENVPN_USER=$v_user|g" .env
                 sed -i "s|^OPENVPN_PASSWORD=.*|OPENVPN_PASSWORD=$v_pass|g" .env
-                sed -i "s|^SERVER_REGIONS=.*|SERVER_REGIONS=$v_reg|g" .env
+                sed -i "s|^SERVER_COUNTRIES=.*|SERVER_COUNTRIES=$v_reg|g" .env
             elif [ "$VPN_PROVIDER" == "proton" ]; then
                 show_info "ProtonVPN - WireGuard Configuration"
                 show_info "Get these values from your Proton account"

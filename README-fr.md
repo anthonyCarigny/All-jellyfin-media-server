@@ -799,7 +799,7 @@ TZ=Europe/Paris
 # NORD VPN
 # OPENVPN_USER=nom_utilisateur  # Votre nom d'utilisateur pour NordVPN
 # OPENVPN_PASSWORD=mot_de_passe  # Votre mot de passe pour NordVPN
-# SERVER_REGIONS=Belgique  # Choisissez la région du serveur (ici la Belgique)
+# SERVER_COUNTRIES=Belgique  # Choisissez la région du serveur (ici la Belgique)
 
 # PROTON VPN
 # ENDPOINT_IP=ADRESSE_IP_PEER  # L'adresse IP du serveur VPN
