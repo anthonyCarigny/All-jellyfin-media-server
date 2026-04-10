@@ -604,6 +604,13 @@ if [ "$DO_HARVEST" == "true" ]; then
                 VAR_NAME="$(echo $name | tr '[:lower:]' '[:upper:]')_KEY"
                 sed -i "/$VAR_NAME=/d" "$CONFIG_FILE"
                 echo "$VAR_NAME=\"$KEY\"" >> "$CONFIG_FILE"
+                
+                # Also save to .env file
+                if [ -f "$ENV_FILE" ]; then
+                    sed -i "/^#*$VAR_NAME=/d" "$ENV_FILE"
+                    echo "$VAR_NAME=$KEY" >> "$ENV_FILE"
+                fi
+                
                 export "$VAR_NAME=$KEY"
                 if [ "$INSTALL_HOMEPAGE" == "true" ] && [ -f "$HOMEPAGE_SERVICES" ]; then
                     sed -i "/$name:/,/key:/ s/key: .*/key: $KEY/" "$HOMEPAGE_SERVICES"
@@ -723,6 +730,13 @@ if [ "$DO_HARVEST" == "true" ]; then
             echo -e "    ${GREEN}[+]${NC} API Key obtained"
             sed -i "/JELLYFIN_KEY=/d" "$CONFIG_FILE"
             echo "JELLYFIN_KEY=\"$FINAL_KEY\"" >> "$CONFIG_FILE"
+            
+            # Also save to .env file
+            if [ -f "$ENV_FILE" ]; then
+                sed -i "/^#*JELLYFIN_KEY=/d" "$ENV_FILE"
+                echo "JELLYFIN_KEY=$FINAL_KEY" >> "$ENV_FILE"
+            fi
+            
             export JELLYFIN_KEY="$FINAL_KEY"
             if [ "$INSTALL_HOMEPAGE" == "true" ] && [ -f "$HOMEPAGE_SERVICES" ]; then
                 sed -i "/Jellyfin:/,/key:/ s|key: .*|key: $FINAL_KEY|" "$HOMEPAGE_SERVICES"
@@ -740,6 +754,13 @@ if [ "$DO_HARVEST" == "true" ]; then
         echo -e "    ${GREEN}[+]${NC} qBit password found"
         sed -i "/QBIT_TEMP_PASS=/d" "$CONFIG_FILE"
         echo "QBIT_TEMP_PASS=\"$QBIT_PASS\"" >> "$CONFIG_FILE"
+        
+        # Also save to .env file
+        if [ -f "$ENV_FILE" ]; then
+            sed -i "/^#*QBIT_TEMP_PASS=/d" "$ENV_FILE"
+            echo "QBIT_TEMP_PASS=$QBIT_PASS" >> "$ENV_FILE"
+        fi
+        
         export QBIT_TEMP_PASS="$QBIT_PASS"
         
         if [[ "$PACK_TYPE" == "2" || "$PACK_TYPE" == "3" ]]; then
@@ -878,6 +899,12 @@ if [ "$DO_HARVEST" == "true" ]; then
             echo -e "    ${GREEN}[+]${NC} Bazarr API Key: ${YELLOW}${BAZARR_KEY:0:8}...${NC}"
             sed -i "/BAZARR_KEY=/d" "$CONFIG_FILE"
             echo "BAZARR_KEY=\"$BAZARR_KEY\"" >> "$CONFIG_FILE"
+            
+            # Also save to .env file
+            if [ -f "$ENV_FILE" ]; then
+                sed -i "/^#*BAZARR_KEY=/d" "$ENV_FILE"
+                echo "BAZARR_KEY=$BAZARR_KEY" >> "$ENV_FILE"
+            fi
 
             URL_BAZARR="http://127.0.0.1:6767/api/system/settings"
             OPTS_B="-s --max-time 10 -H X-API-KEY:$BAZARR_KEY"
