@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 
-- Media:
+- Media & Requests:
     - Jellyfin:
         icon: sh-jellyfin
         href: http://{{HOMEPAGE_VAR_SERVER_IP}}:8096 
@@ -18,8 +18,6 @@
           enableMediaControl: false
           showEpisodeNumber: true
           expandOneStreamToTwoRows: false
-          
-- Requests & Indexers:
     - Jellyseerr:
         icon: sh-jellyseerr
         href: http://{{HOMEPAGE_VAR_SERVER_IP}}:5055
@@ -29,7 +27,8 @@
           type: jellyseerr
           url: http://jellyseerr:5055
           key: {{JELLYSEER_API_KEY}}
-
+          
+- Indexers & Torrent:
     - Prowlarr:
         icon: sh-prowlarr
         href: http://{{HOMEPAGE_VAR_SERVER_IP}}:9696
@@ -39,7 +38,6 @@
           type: prowlarr
           url: http://prowlarr:9696
           key: {{PROWLARR_KEY}}
-
     - Jackett:
         icon: sh-jackett
         href: http://{{HOMEPAGE_VAR_SERVER_IP}}:9117
@@ -47,7 +45,18 @@
         widget:
           type: jackett
           url: http://jackett:9117
-          key: {{JACKETT_API_KEY}}
+          password: {{JACKETT_PASSWORD}}
+    - qBittorrent:
+        icon: sh-qbittorrent
+        href: http://{{HOMEPAGE_VAR_SERVER_IP}}:8080
+        container: qbittorrent
+        widget:
+          type: qbittorrent
+          url: http://gluetun:8080
+          username: admin
+          password: {{QBIT_TEMP_PASS}}
+          enableLeechProgress: true
+          enableLeechSize: true
           
 - Management:
     - Radarr:
@@ -72,14 +81,13 @@
           key: {{SONARR_KEY}}
           enableQueue: true
 
-    - qBittorrent:
-        icon: sh-qbittorrent
-        href: http://{{HOMEPAGE_VAR_SERVER_IP}}:8080
-        container: qbittorrent
+    - Bazarr:
+        icon: sh-bazarr
+        href: http://{{HOMEPAGE_VAR_SERVER_IP}}:6767
+        description: Subtitles Management
+        container: bazarr
         widget:
-          type: qbittorrent
-          url: http://gluetun:8080
-          username: admin
-          password: {{QBIT_TEMP_PASS}}
-          enableLeechProgress: true
-          enableLeechSize: true
+          type: bazarr
+          url: http://bazarr:6767
+          key: {{BAZARR_KEY}}
+          enableQueue: true
