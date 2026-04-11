@@ -703,7 +703,11 @@ if [ "$DO_HARVEST" == "true" ]; then
 
             echo -n "    [1/6] Config... "
             CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$BASE_URL/Startup/Configuration" -H "Content-Type: application/json" -d "{\"ServerName\":\"$SERVER_NAME\",\"UICulture\":\"fr-FR\",\"MetadataCountryCode\":\"FR\"}")
-            check_http "$CODE"
+            if [[ "$CODE" == "401" ]]; then
+                echo -e "${YELLOW}[WARN]${NC} Jellyfin semble déjà configuré, on continue"
+            else
+                check_http "$CODE"
+            fi
 
             echo -n "    [2/6] Initialisation... "
             CODE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "$BASE_URL/Startup/User")
